@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-{{ partial "head.html" . }}
-{{ partial "header.html" . }}
-
-	<h1>{{ .Title }}</h1>
-	<!--<h2>{{ .Date.Format "2006-01-02T15:04:05-07:00" }}</h2>-->
-	<h2>{{ .PublishDate.Format "2006-01-02" }}</h2>
-	<!--<h2>{{ .PublishDate.Format "Mon, Jan 2, 2006 15:04" }}</h2>
-	<h2>{{ .Date.Format "Mon, Jan 2, 2006 15:04" }}</h2>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+  <!--<h2>{{ .Date.Format "2006-01-02T15:04:05-07:00" }}</h2>-->
+  <h2>{{ .PublishDate.Format "2006-06-13" }}</h2>
+  <!--<h2>{{ .PublishDate.Format "Mon, Jan 2, 2006 15:04" }}</h2>
+  <h2>{{ .Date.Format "Mon, Jan 2, 2006 15:04" }}</h2>-->
   {{ .Content }}
 
 {{ partial "footer.html" . }}
+  
+</body>
+</html>

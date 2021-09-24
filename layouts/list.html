@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+
+
+<!--
+/content/post
+-->
+
+<!--
+
+  <h1>post</h1>
+  {{ range first 10 .Data.Pages }}
+    {{ if eq .Type "post" }}
+      <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
+    {{ end }}
+  {{ end }}
+
+-->
+
+<!--
+/content/pages
+-->
+
+
+  <!--
+  <h1>pages</h1>
+  {{ range .Data.Pages }}
+    {{ if eq .Type "page" }}
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ end }}
+  {{ end }}
+
+  -->
+
+  <!--
+
+  {{ range first 20 .Data.Pages }}
+  {{.}}
+  {{end}}
+  list all content types
+   Page(/page) Page(/post) Page(/about/index.md) Page(/blogs) 
+
+  -->
+
+  {{range .Data.Pages }}
+    {{ if eq .Type "blogs" }}
+    <!-- if eq .Title "Post" -->
+      <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
+    {{ end }}
+  {{end}}
+
+  {{range .Data.Pages }}
+    {{ if eq .Type "study notes" }}
+    <!-- if eq .Title "Post" -->
+      <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
+    {{ end }}
+  {{end}}
+
+
+  {{range .Data.Pages }}
+    {{ if eq .Type "study_notes" }}
+    <!-- if eq .Title "Post" -->
+      <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
+    {{ end }}
+  {{ end }}
+
+
+      <!-- directory must be lower case:
+      disablePathToLower = true: case sensitive
+      -->
+    <ul type="disc">
+      <li> <h3><a href="study_notes/electrodynamics/">Electrodynamic</a></h3> </li>
+      <li> <h3><a href="study_notes/theoretical_mechanics/">Theoretical Mechanics</a></h3> </li>
+    </ul>
+
+  <!--
+    {{range .Site.RegularPages }}
+    {{ .Type }}
+      {{ if eq .Type "study_notes" }}
+
+      <h3><a href={{ .Permalink }}>{{ .Title }}</a></h3>
+
+      {{ end }}
+    {{ end }}
+  {{ range where (where .Site.RegularPages "Type" "study_notes") "File.Dir" "study_notes/qm/" }}
+      <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
+  {{ end }}
+    -->
+    <!--
+    https://discourse.gohugo.io/t/list-all-pages-in-sub-folder/28063/2
+    -->
+    <!--
+{{ range (readDir "content/study_notes/") }}
+  {{ if .IsDir }}
+    <p>{{ .Name | title }}</p>
+    <ul>
+      {{ $path := printf "study_notes/%s/" .Name }}
+      {{$path}}
+
+      {{range $.Site.RegularPages}}
+	{{.Title}}
+      {{end}}
+      <hr>
+      {{ range where (where $.Site.RegularPages "Type" "study_notes") "File.Dir" $path }}
+      {{.File.Dir}}
+      {{end}}
+
+      {{ range where (where $.Site.RegularPages "Type" "study_notes") "File.Dir" $path }}
+	  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+-->
+  {{ end }}
+{{ end }}
+
+  <!--
+  https://gohugo.io/content-management/organization/
+  -->
+  <h2><a href="about/"> About Me</a></h2>
+
+
+
+
+{{ partial "footer.html" . }}
