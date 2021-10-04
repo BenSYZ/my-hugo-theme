@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 {{partial "head.html" . }}
-{{ partial "header.html" . }}
 <html>
 <body>
+    <h1>{{ .Title }}</h1>
+    <hr>
 
 <!--https://discourse.gohugo.io/t/function-for-key-and-value-from-a-dict/24545-->
 {{ $study_notes_dict := dict "electrodynamics" "Electrodynamics" "theoretical_mechanics" "Theoretical Mechanics" }}

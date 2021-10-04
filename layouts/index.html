@@ -4,7 +4,9 @@
   {{partial "head.html" . }}
   </head>
 <body>
-{{partial "header.html" .}}
+    <h1>{{ .Title }}</h1>
+    <hr>
+
 
 <!--Define a selected list, do not use dict. because dict will give a alphabetical order-->
 {{ $study_notes_list := split "blogs:Blogs;study_notes:Study Notes;about:About" ";" }}
