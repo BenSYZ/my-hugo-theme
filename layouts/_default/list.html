@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,6 +9,27 @@
   {{ range .Data.Pages }}
     <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
   {{ end }}
+
+{{ partial "footer.html" . }}
+
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+{{partial "head.html" . }}
+<html>
+<body>
+    <h1>{{ .Title }}</h1>
+    <hr>
+
+  <dl>
+  {{ range $.Data.Pages }}
+    <dt><a href={{ .Permalink }}>{{ .Title }}</a></dt>
+      <dd>[{{ .Page.Lastmod.Format "Mon, 2006-01-02" }}]</dd>
+      <dd>{{ .Description }}</dd>
+  {{ end }}
+  </dl>
 
 {{ partial "footer.html" . }}
 
