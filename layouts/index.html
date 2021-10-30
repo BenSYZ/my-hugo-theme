@@ -9,11 +9,14 @@
 
 
 <!--Define a selected list, do not use dict. because dict will give a alphabetical order-->
-{{ $study_notes_list := split "blogs:Blogs;tips:Tips;study_notes:Study Notes;about:About" ";" }}
+<!-- eg: "blogs:Blogs;tips:Tips;study_notes:Study Notes;about:About"
+      dirname: Titlename;
+-->
+{{ $selected_item_list := split .Site.Params.selected_item_list ";" }}
 
 <dl>
 <!--select pairs-->
-{{ range $selected_dir_title_pair := $study_notes_list }}
+{{ range $selected_dir_title_pair := $selected_item_list }}
   <!--get the dirname and titlename-->
   {{ $selected_dirname := index (first 1 (split $selected_dir_title_pair ":")) 0 }}
   {{ $titlename := index (first 2 (split $selected_dir_title_pair ":")) 1 }}
@@ -35,37 +38,6 @@
 {{end}}
 </dl>
 
-
-
-{{ $study_notes_dict := dict "blogs" "Blogs" "study_notes" "Study Notes" "about" "About" }}
-{{ range $selected_dirname, $titlename := $study_notes_dict }}
-
-  <dl>
-  {{ range $.Data.Pages }}
-    <!--{{.File.Dir}}-->
-
-    <!-- {{strings.TrimPrefix .Path "study_notes/electrodynamics"}} -->
-
-    {{ $sublink := substr .RelPermalink (len $.RelPermalink)}}
-    <!--https://gohugo.io/functions/split/-->
-    <!--https://discourse.gohugo.io/t/how-to-get-the-first-item-from-an-array-solved/6283-->
-    {{$sub_dir_name := index (first 1 (split $sublink "/")) 0}}
-    <!--start with dollar means current page, not item in list page-->
-    {{ if eq $sub_dir_name $selected_dirname }}
-      <!--Omitted:
-	https://github.com/gohugoio/hugo/issues/1366
-      {{ if eq (substr .RelPermalink 0 (len $.RelPermalink)) $.RelPermalink }}
-	  // This is a child page (e.g. /guides/foo/bar)
-      {{ end }}-->
-      <!--
-      <h2><a href={{ .Permalink }}>{{ $titlename }}</a></h2>
-      <dd>{{ .Description }}</dd>
-      -->
-    {{end}}
-  {{ end }}
-  </dl>
-
-{{end}}
 {{partial "footer.html" .}}
 </body>
 </html>

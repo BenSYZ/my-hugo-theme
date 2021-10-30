@@ -15,3 +15,11 @@ Theme priority:
 * /theme/ben-theme/layouts/post/single.html
 * /theme/ben-theme/layouts/_default/single.html
 
+## parameters:
+```yaml
+params:
+  record_number: 备案号
+  # root list item
+  selected_item_list: "blogs:Blogs;tips:Tips;study_notes:Study Notes;about:About"
+```
+

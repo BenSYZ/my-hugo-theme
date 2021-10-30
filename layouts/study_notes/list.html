@@ -13,7 +13,6 @@
   <h2>{{$titlename}}</h2>
   <dl>
   {{ range $.Data.Pages.Reverse }}
-    <!--{{.File.Dir}}-->
 
     <!-- {{strings.TrimPrefix .Path "study_notes/electrodynamics"}} -->
 
@@ -23,11 +22,6 @@
     {{$sub_dir_name := index (first 1 (split $sublink "/")) 0}}
     <!--start with dollar means current page, not item in list page-->
     {{ if eq $sub_dir_name $selected_dirname }}
-      <!--Omitted:
-	https://github.com/gohugoio/hugo/issues/1366
-      {{ if eq (substr .RelPermalink 0 (len $.RelPermalink)) $.RelPermalink }}
-	  // This is a child page (e.g. /guides/foo/bar)
-      {{ end }}-->
       <dt><a href={{ .Permalink }}>{{ .Title }}</a></dt>
       <dd>{{ .Description }}</dd>
     {{end}}
