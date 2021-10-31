@@ -1,0 +1,54 @@
+<!--ref: https://www.artembutusov.com/pandoc-markdown-syntax-highlighting-with-highlight-js -->
+<!---->
+<!--mini-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+<!--sublime theme-->
+<link rel="stylesheet" href="/css/hljs/monokai-sublime.min.css">
+<!--jquery: add function used at the end-->
+<script src="/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!--hljs script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+
+
+<!--linenumber-->
+<!--
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+-->
+
+<!--linenumber css-->
+<!--
+<link rel="stylesheet" href="/css/hljs/line-numbers.min.css">
+-->
+
+
+<script>
+$(function() {
+    $("pre > code").each(function(i, block) {
+        var codeClass = $(this).parent().attr("class");
+        if (codeClass == null || codeClass === "") {
+            $(this).addClass("hljs");
+        } else {
+            var map = {
+                js: "javascript"
+            };
+            if (map[codeClass]) {
+                codeClass = map[codeClass];
+            }
+            $(this).addClass(codeClass);
+            hljs.highlightBlock(this);
+        }
+    });
+});
+</script>
+
+<!--update linenumber-->
+<!--
+<script>
+$(document).ready(function() {
+    $('code.hljs').each(function(i, block) {
+        hljs.lineNumbersBlock(block);
+    });
+});
+</script>
+-->

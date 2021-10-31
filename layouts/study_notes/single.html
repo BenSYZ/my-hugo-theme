@@ -8,6 +8,11 @@
 <!-- extra head content -->
 {{ partial "header.html" . }}
 
-  {{ .Content }}
+  <div>
+    <div id="TitleWithToc">{{ .Title }} {{ .TableOfContents }} </div>
 
-{{ partial "footer.html" . }}
+
+    <div id="sidebar"> {{partial "sidebar.html" .}} </div>
+    <div id="content">{{ .Content }}{{ partial "footer.html" . }}<div>
+  </div>
+

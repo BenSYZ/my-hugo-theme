@@ -4,3 +4,35 @@
     color: white;
   }
 }
+body{
+    font-family: Verdana, Arial, sans-serif;
+}
+
+#TableOfContents {
+	margin:0 0 0 -20px;
+}
+#TitleWithToc {
+	width:300px;
+	overflow:hidden;
+	margin:20px 0 0 0px;
+        float:left;
+        overflow:hidden;
+}
+
+#content {
+	margin:0 0 20px 0;
+        width: 590px;
+        float:left;
+        overflow:hidden;
+}
+#sidebar {
+	width:180px;
+	overflow:hidden;
+	margin:0 0 20px 0;
+	padding:0;
+	float:right;
+}
+#SidebarList {
+	margin:0 0 0 -20px;
+	float:left;
+}

@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   {{ partial "head.html" . }}
+  {{ partial "head_hljs.html" . }}
 </head>
 <body>
-  {{ .TableOfContents }}
   {{ partial "header.html" . }}
-  {{ .Content }}
+  <div>
+    <div id="TitleWithToc">{{ .Title }} {{ .TableOfContents }} </div>
 
-{{ partial "footer.html" . }}
 
+    <div id="sidebar"> {{partial "sidebar.html" .}} </div>
+    <div id="content">{{ .Content }}{{ partial "footer.html" . }}<div>
+  </div>
 </body>
 </html>

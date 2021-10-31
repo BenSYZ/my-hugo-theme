@@ -23,3 +23,11 @@ params:
   selected_item_list: "blogs:Blogs;tips:Tips;study_notes:Study Notes;about:About"
 ```
 
+## Resource files
+
+```
+/static/avatar.jpg
+/content/about/index.md
+/content/donate/index.md
+```
+
