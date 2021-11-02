@@ -4,13 +4,16 @@
   {{ partial "head.html" . }}
 </head>
 <body>
-  {{ partial "header.html" . }}
-  <div>
+  <div class="header"> {{ partial "header.html" . }} </div>
+
+  <div class="container">
     <div id="TitleWithToc">{{ .Title }} {{ .TableOfContents }} </div>
+    <div id="content"> {{ .Content }} </div>
+    <div id="Rsidebar"> {{partial "sidebar.html" .}} </div>
+  </div>
 
-
-    <div id="sidebar"> {{partial "sidebar.html" .}} </div>
-    <div id="content">{{ .Content }}{{ partial "footer.html" . }}<div>
+  <div class="footer">
+    {{ partial "footer.html" . }}
   </div>
 </body>
 </html>
