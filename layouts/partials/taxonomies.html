@@ -1,0 +1,38 @@
+<!--
+<ul>
+    {{ range .Site.Taxonomies.series.golang }}
+	<li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+    {{ end }}
+</ul>
+
+{{ with .Params.topics }}
+<ul id="topics">
+  {{ range . }}
+    <li> <a href="{{ "topics" | absURL }}/{{ . | urlize }}">{{ . }}</a> </li>
+  {{ end }}
+</ul>
+{{ end }}
+
+{{ with .Params.categories }}
+<ul id="categories">
+  {{ range . }}
+    <li><a href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a> </li>
+  {{ end }}
+</ul>
+{{ end }}
+
+-->
+{{ with .Params.tags }}
+<ul id="tags">
+  <div>
+    <a href="{{ "tags" | absURL }}"><i class="fas fa-tags"></i></a>
+    Keywords: 
+  </div>
+  <div>
+    {{ range . }}
+      <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> </li>
+    {{ end }}
+  </div>
+</ul>
+{{ end }}
+

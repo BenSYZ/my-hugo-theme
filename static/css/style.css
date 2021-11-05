@@ -59,3 +59,15 @@ a{
 	padding:0 0 0 5%;
 	margin:0 0 30px 0;
 }
+
+/*tags*/
+#tags >div,div>li {
+  float: left;
+  margin: 0 10px 0 0;
+}
+#tags {
+  list-style-type: none;
+}
+#tags >div> a{
+    color: #000000;
+}
