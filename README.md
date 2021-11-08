@@ -18,12 +18,17 @@ Theme priority:
 ## parameters:
 ```yaml
 params:
-  record_number: 备案号
+  icp_record: ICP 备案号
+  public_safety_record: 公安 备案号
+  public_safety_record_number: 纯数字的公安备案号(用于网页跳转)
+
   # root list item
   selected_item_list: "blogs:Blogs;tips:Tips;study_notes:Study Notes;about:About"
 ```
 
 ## Resource files
+
+These resources are recommended to be modified:
 
 ```
 /static/avatar.jpg
