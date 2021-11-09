@@ -4,8 +4,9 @@
   {{partial "head.html" . }}
   </head>
 <body>
-    <h1>{{ .Title }}</h1>
-    <hr>
+<div class="container">
+  <h1>{{ .Title }}</h1>
+  <hr>
 
 
 <!--Define a selected list, do not use dict. because dict will give a alphabetical order-->
@@ -39,5 +40,6 @@
 </dl>
 
 {{partial "footer.html" .}}
+</div>
 </body>
 </html>

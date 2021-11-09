@@ -4,18 +4,17 @@
   {{ partial "head.html" . }}
 </head>
 <body>
-  <div class="header"> {{ partial "header.html" . }} </div>
-
   <div class="container">
-    <div id="TitleWithToc">{{ .Title }} {{ .TableOfContents }} </div>
-    <div id="content"> {{ .Content }} </div>
-    <div id="Rsidebar"> {{partial "sidebar.html" .}} </div>
-  </div>
-
-
-  <div class="footer">
-    {{ partial "taxonomies.html" . }}
-    {{ partial "footer.html" . }}
+    <div class="header"> {{ partial "header.html" . }} </div>
+    <div class="middle">
+      <div id="TitleWithToc">{{ .Title }} {{ .TableOfContents }} </div>
+      <div id="content"> {{ .Content }} </div>
+      <div id="Rsidebar"> {{partial "sidebar.html" .}} </div>
+    </div>
+    <div class="footer">
+      {{ partial "taxonomies.html" . }}
+      {{ partial "footer.html" . }}
+    </div>
   </div>
 </body>
 </html>

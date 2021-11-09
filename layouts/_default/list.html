@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-{{partial "head.html" . }}
 <html>
+  <head>
+    {{partial "head.html" . }}
+  </head>
 <body>
-    <h1>{{ .Title }}</h1>
-    <hr>
-
-  <dl>
-  {{ range $.Data.Pages }}
-    <dt><a href={{ .Permalink }}>{{ .Title }}</a></dt>
-      <dd>[{{ .Page.Lastmod.Format "Mon, 2006-01-02" }}]</dd>
-      <dd>{{ .Description }}</dd>
-  {{ end }}
-  </dl>
-
-{{ partial "footer.html" . }}
+  <div class="container">
+    <div class="header"> {{ partial "header.html" . }} </div>
+    <div class="middle">
+      <div id="content">
+	<dl>
+	{{ range $.Data.Pages }}
+	  <dt><a href={{ .Permalink }}>{{ .Title }}</a></dt>
+	    <dd>[{{ .Page.Lastmod.Format "Mon, 2006-01-02" }}]</dd>
+	    <dd>{{ .Description }}</dd>
+	{{ end }}
+	</dl>
+	</div>
+      <div id="Rsidebar"> {{partial "sidebar.html" .}} </div>
+    </div>
+    <div class="footer">
+      {{ partial "taxonomies.html" . }}
+      {{ partial "footer.html" . }}
+    </div>
+  </div>
 
 </body>
 </html>

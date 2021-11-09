@@ -13,13 +13,17 @@ html,body{
 a{
     color: #0681d0;
 }
+.container{
+      width:95%;
+      margin:0 0 0 2%;
+}
 
 .header {
       width:100%;
       margin:0 0 20px 0;
 }
 
-.container {
+.middle {
       width: 100%;
       height: 100%;
 }
@@ -44,7 +48,7 @@ footer > a > img{
 }
 
 #content {
-        width:50%;
+        width:60%;
 	float:left;
 	overflow:hidden; //超出宽度隐藏
 }
@@ -53,7 +57,7 @@ footer > a > img{
         max-width:100%;
 }
 #Rsidebar {
-	width: 20%;
+	width: 10%;
 	float: right;
 	padding:0 2% 0 2%;
 }
