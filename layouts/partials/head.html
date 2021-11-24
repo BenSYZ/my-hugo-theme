@@ -1,6 +1,12 @@
 <meta charset="UTF-8">
 <title>{{.Title}}</title>
 
+<!--ref: https://note.qidong.name/2020/07/mermaid/-->
+{{ if .Params.code }}
+  {{ partial "head_hljs.html" . }}
+{{end}}
+<!--import first then modify-->
+
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/footer.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/code.css">
@@ -10,11 +16,6 @@
 <link rel="icon" id="light-scheme-icon" href="{{ .Site.BaseURL }}/favicons/favicon_B_Light.ico" type="image/x-icon">
 <link rel="icon" id="dark-scheme-icon" href="{{ .Site.BaseURL }}/favicons/favicon_B_Dark.ico" type="image/x-icon">
 <script src="{{ .Site.BaseURL }}/js/favicon.js"></script> 
-
-<!--ref: https://note.qidong.name/2020/07/mermaid/-->
-{{ if .Params.code }}
-  {{ partial "head_hljs.html" . }}
-{{end}}
 
 {{ if .Params.mermaid }}
   {{ partial "head_mermaid.html" . }}

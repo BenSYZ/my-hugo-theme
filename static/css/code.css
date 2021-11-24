@@ -1,5 +1,8 @@
-*>:not(pre)>code {
-    background-color: #1b1f2325;
+code {
+    background-color: #f6f8fa;
     padding: 0.2% 0.5% 0.2% 0.5% ;
     border-radius: 5px;
+}
+.hljs{
+    background: #f6f8fa;
 }
