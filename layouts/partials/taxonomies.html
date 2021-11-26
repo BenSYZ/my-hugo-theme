@@ -23,16 +23,14 @@
 
 -->
 {{ with .Params.tags }}
-<ul id="tags">
-  <div>
-    <a href="{{ "tags" | absURL }}"><i class="fas fa-tags"></i></a>
-    Keywords: 
-  </div>
-  <div>
-    {{ range . }}
-      <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> </li>
-    {{ end }}
-  </div>
+<div id="tags">
+  <a href="{{ "tags" | absURL }}"><i class="fas fa-tags"></i></a>
+  Keywords: 
+<ul>
+  {{ range . }}
+    <li> <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> </li>
+  {{ end }}
 </ul>
+</div>
 {{ end }}
 
