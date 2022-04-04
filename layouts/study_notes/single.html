@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<!-- CSS -->
-<!--sing is for not explictly setted(meta data) type-->
-
-
-{{ partial "head.html" . }}
-{{ partial "head_katex.html" . }}
-<!-- extra head content -->
-{{ partial "header.html" . }}
-
-  <div>
-    <div id="TitleWithToc">{{ .Title }} {{ .TableOfContents }} </div>
-
-
-    <div id="sidebar"> {{partial "sidebar.html" .}} </div>
-    <div id="content">{{ .Content }}{{ partial "footer.html" . }}<div>
-  </div>
-
+<html lang="en">
+  <!-- CSS -->
+  <!--sing is for not explictly setted(meta data) type-->
+  <head>
+    {{ partial "head.html" . }}
+    {{ partial "head_katex.html" . }}
+    <!-- extra head content -->
+  </head>
+  <body>
+  {{ partial "header.html" . }}
+    <div>
+      <div id="TitleWithToc">{{ .Title }} {{ .TableOfContents }} </div>
+      <div id="Rsidebar"> {{partial "sidebar.html" .}} </div>
+      <div id="content">{{ .Content }}{{ partial "footer.html" . }}</div>
+    </div>
+  </body>
+</html>

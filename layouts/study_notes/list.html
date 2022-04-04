@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-{{partial "head.html" . }}
 <html>
-<body>
+  <head>
+    {{partial "head.html" . }}
+  </head>
+  <body>
     <h1>{{ .Title }}</h1>
     <hr>
 
-<!--https://discourse.gohugo.io/t/function-for-key-and-value-from-a-dict/24545-->
-{{ $study_notes_dict := dict "electrodynamics" "Electrodynamics" "theoretical_mechanics" "Theoretical Mechanics" }}
+    <!--https://discourse.gohugo.io/t/function-for-key-and-value-from-a-dict/24545-->
+    {{ $study_notes_dict := dict "electrodynamics" "Electrodynamics" "theoretical_mechanics" "Theoretical Mechanics" }}
 
-{{range $selected_dirname, $titlename := $study_notes_dict}}
+    {{range $selected_dirname, $titlename := $study_notes_dict}}
+    <h2>{{$titlename}}</h2>
+    <dl>
+      {{ range $.Data.Pages.Reverse }}
 
-  <h2>{{$titlename}}</h2>
-  <dl>
-  {{ range $.Data.Pages.Reverse }}
+      <!-- {{strings.TrimPrefix .Path "study_notes/electrodynamics"}} -->
 
-    <!-- {{strings.TrimPrefix .Path "study_notes/electrodynamics"}} -->
-
-    {{ $sublink := substr .RelPermalink (len $.RelPermalink)}}
-    <!--https://gohugo.io/functions/split/-->
-    <!--https://discourse.gohugo.io/t/how-to-get-the-first-item-from-an-array-solved/6283-->
-    {{$sub_dir_name := index (first 1 (split $sublink "/")) 0}}
-    <!--start with dollar means current page, not item in list page-->
-    {{ if eq $sub_dir_name $selected_dirname }}
+      {{ $sublink := substr .RelPermalink (len $.RelPermalink)}}
+      <!--https://gohugo.io/functions/split/-->
+      <!--https://discourse.gohugo.io/t/how-to-get-the-first-item-from-an-array-solved/6283-->
+      {{$sub_dir_name := index (first 1 (split $sublink "/")) 0}}
+      <!--start with dollar means current page, not item in list page-->
+      {{ if eq $sub_dir_name $selected_dirname }}
       <dt><a href={{ .Permalink }}>{{ .Title }}</a></dt>
       <dd>{{ .Description }}</dd>
+      {{end}}
+      {{ end }}
+    </dl>
     {{end}}
-  {{ end }}
-  </dl>
 
-{{end}}
-
-
-{{ partial "footer.html" . }}
-
-</body>
+    {{ partial "footer.html" . }}
+  </body>
 </html>

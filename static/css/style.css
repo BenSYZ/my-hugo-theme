@@ -4,6 +4,9 @@
     color: white;
   }
 }
+#Avatar > img{
+  width: 100pt;
+}
 html,body{
   font-family: Verdana, Arial, sans-serif;
   width: 100%;

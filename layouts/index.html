@@ -15,7 +15,6 @@
 -->
 {{ $selected_item_list := split .Site.Params.selected_item_list ";" }}
 
-<dl>
 <!--select pairs-->
 {{ range $selected_dir_title_pair := $selected_item_list }}
   <!--get the dirname and titlename-->
@@ -29,15 +28,12 @@
     <!--get the first directory name frome sublink-->
     {{$sub_dir_name := index (first 1 (split $sublink "/")) 0}}
     {{ if eq $sub_dir_name $selected_dirname }}
-      <dt>
       <h2><a href={{ .Permalink }}>{{ $titlename }}</a></h2>
-      </dt>
-      <dd>{{.Description}}</dd>
+      {{.Description}}
     {{end}}
   {{ end }}
 
 {{end}}
-</dl>
 
 {{partial "footer.html" .}}
 </div>
