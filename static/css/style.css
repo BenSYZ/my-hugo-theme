@@ -37,14 +37,21 @@ a{
 }
 
 footer > a > img{
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 #TitleWithToc {
-	width:20%;
-	height:100%;
-	float:left;
-	padding: 1% 1% 2% 2%;
+    width:20%;
+    height:100%;
+    float:left;
+    padding: 1% 1% 2% 2%;
+    line-height: 200%;
+}
+#TitleOfToc {
+    font-size: x-large ;
+}
+#TableOfContents *{
+    font-size: normal ;
 }
 #TableOfContents > ul {
     width:100%;
@@ -53,15 +60,13 @@ footer > a > img{
 #TableOfContents > ul > li >ul {
     padding:0 0 0 10%;
 }
-#TableOfContents > ul> li> ul> li{
-    font-size: smaller;
-}
 
 #content {
-        width:60%;
-	float:left;
-	overflow:hidden; /*超出宽度隐藏*/
+    width:60%;
+    float:left;
+    overflow:hidden; /*超出宽度隐藏*/
 }
+
 img {
     max-width:100%;
 }
