@@ -22,6 +22,6 @@
   {{ partial "head_mermaid.html" . }}
 {{ end }}
 
-{{ if or (not (isset .Params "exFonts")) (.Params "exFonts" eq "") }}
+{{ if or (not (isset .Params "exFonts")) (eq ( .Params.exFonts ) "") }}
   {{ partial "head_exFonts.html" . }}
 {{ end }}
