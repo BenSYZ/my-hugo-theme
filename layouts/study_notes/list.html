@@ -15,8 +15,6 @@
     <dl>
       {{ range $.Data.Pages.Reverse }}
 
-      <!-- {{strings.TrimPrefix .Path "study_notes/electrodynamics"}} -->
-
       {{ $sublink := substr .RelPermalink (len $.RelPermalink)}}
       <!--https://gohugo.io/functions/split/-->
       <!--https://discourse.gohugo.io/t/how-to-get-the-first-item-from-an-array-solved/6283-->
