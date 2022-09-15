@@ -15,7 +15,7 @@ link.rel = 'stylesheet';
 if (mobileCheck()){
   link.href = '/css/style_mobile.css';
 }else{
-  link.href = '/css/style.css';
+  link.href = '/css/style_pc.css';
 }
 
 // Append link element to HTML head

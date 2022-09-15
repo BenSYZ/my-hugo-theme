@@ -40,13 +40,6 @@ footer > a > img{
     vertical-align: middle;
 }
 
-#TitleWithToc {
-    width:20%;
-    height:100%;
-    float:left;
-    padding: 1% 1% 2% 2%;
-    line-height: 200%;
-}
 #TitleOfToc {
     font-size: x-large ;
 }
@@ -61,11 +54,6 @@ footer > a > img{
     padding:0 0 0 10%;
 }
 
-#content {
-    width:60%;
-    float:left;
-    overflow:hidden; /*超出宽度隐藏*/
-}
 
 img {
     max-width:100%;
@@ -78,15 +66,6 @@ figcaption {
   width:100%;
 }
 
-#Rsidebar {
-	width: 10%;
-	float: right;
-	padding:0 2% 0 2%;
-}
-#Rsidebar > ul {
-    padding:0 0 0 5%;
-    margin:0 0 10% 0;
-}
 
 /*tags*/
 
