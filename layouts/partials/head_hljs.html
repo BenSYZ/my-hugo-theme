@@ -1,51 +1,32 @@
-<!--ref: https://www.artembutusov.com/pandoc-markdown-syntax-highlighting-with-highlight-js -->
-<!---->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.5.0/styles/github.css">
-<!--jquery: add function used at the end-->
-<script src="https://cdn.jsdelivr.net/npm/jquery.min.js@3.5.1/jquery.min.js"></script>
-
-<!--hljs script-->
-<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.5.0/lib/index.min.js"></script>
-
-
-<!--linenumber-->
-<!--
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
--->
-
-<!--linenumber css-->
-<!--
-<link rel="stylesheet" href="/css/hljs/line-numbers.min.css">
--->
-
-
 <script>
-$(function() {
+(function() {
     $("pre > code").each(function(i, block) {
         var codeClass = $(this).parent().attr("class");
         if (codeClass == null || codeClass === "") {
             $(this).addClass("hljs");
         } else {
             var map = {
-                js: "javascript"
+                js: "javascript",
             };
             if (map[codeClass]) {
                 codeClass = map[codeClass];
             }
             $(this).addClass(codeClass);
-            hljs.highlightBlock(this);
+            //hljs.highlightBlock(this);
         }
     });
 });
 </script>
 
-<!--update linenumber-->
-<!--
-<script>
-$(document).ready(function() {
-    $('code.hljs').each(function(i, block) {
-        hljs.lineNumbersBlock(block);
-    });
-});
-</script>
--->
+<link rel="stylesheet"
+      href="/css/hljs/monokai-sublime.min.css">
+<link rel="stylesheet"
+      href="/css/hljs/line-numbers.min.css">
+
+<!--<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>-->
+<script src="/js/hljs/highlight.min.js"></script>
+<!--<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>-->
+<script src="/js/hljs/highlightjs-line-numbers.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<script>hljs.initLineNumbersOnLoad();</script>
