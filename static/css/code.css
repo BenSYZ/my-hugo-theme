@@ -1,19 +1,36 @@
 code {
-    background-color: #f6f8fa;
     padding: 0.2% 0.5% 0.2% 0.5% ;
     border-radius: 5px;
 }
 @media all and (prefers-color-scheme: dark) {
     code {
         background-color: #6e6e6e;
-        padding: 0.2% 0.5% 0.2% 0.5% ;
-        border-radius: 5px;
+    }
+    /*pre:has(> code) {*/
+    pre {
+        background-color: #6e6e6e;
     }
 }
-.hljs{
+@media all and (prefers-color-scheme: light) {
+    code {
+        background-color: #f6f8fa;
+    }
+    /*pre:has(> code) {*/
+    pre {
+        background-color: #f6f8fa;
+    }
+/*.hljs{
     background: #f6f8fa;
-}
+}*/
+/*pre:has(> code) {*/
 pre {
     overflow: auto;
-    background: #23241f;
+    border-radius: 5px;
+    padding: 0.2% 0.5% 0.2% 0.5% ;
 }
+/* restore block code element*/
+pre > code {
+    border-radius: unset;
+    background-color: unset;
+}
+
