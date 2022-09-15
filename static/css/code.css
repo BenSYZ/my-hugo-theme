@@ -13,3 +13,7 @@ code {
 .hljs{
     background: #f6f8fa;
 }
+pre {
+    overflow: auto;
+    background: #23241f;
+}
