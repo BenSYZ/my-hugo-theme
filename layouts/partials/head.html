@@ -24,6 +24,11 @@
   {{ partial "head_mermaid.html" . }}
 {{ end }}
 
+{{ if .Params.katex }}
+  {{ partial "head_katex.html" . }}
+{{ end }}
+
+
 {{ if or (not (isset .Params "exFonts")) (eq ( .Params.exFonts ) "") }}
   {{ partial "head_exFonts.html" . }}
 {{ end }}
