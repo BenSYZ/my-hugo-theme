@@ -91,27 +91,39 @@ del{
 }
 
 /* Table Styles */
-table {
+table:not(code table) {
   width: 100%;
   border-collapse: collapse;
 }
 
-th, td {
+table:not(code table) th,
+table:not(code table) td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
-th {
+table:not(code table) th {
   background-color: #f2f2f2;
 }
 
-tr:nth-child(even) {
+table:not(code table) tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-/* Hover effect on rows */
-tr:hover {
+
+@media all and (prefers-color-scheme: dark) {
+    table:not(code table) th {
+      background-color: black;
+    }
+    table:not(code table) tr:nth-child(even) {
+      background-color: #30363d;
+    }
+}
+
+/* Hover effect on rows
+table:not(code table) tr:hover {
   background-color: #e5e5e5;
 }
+ */
 
