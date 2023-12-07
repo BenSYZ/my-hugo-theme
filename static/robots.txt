@@ -29,7 +29,5 @@ User-agent: netEstate NE Crawler
 Disallow: /
 
 User-agent: *
-Disallow: /js
 Disallow: /icons
-Disallow: /css
 Crawl-delay: 200
