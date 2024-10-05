@@ -9,7 +9,7 @@
     <div class="middle">
       <div id="content">
 	<dl>
-	{{ range $.Data.Pages }}
+	{{ range $.Data.Pages.ByLastmod.Reverse }}
 	  <dt><a href={{ .Permalink }}>{{ .Title }}</a></dt>
 	    <dd>[{{ .Page.Lastmod.Format "Mon, 2006-01-02" }}]</dd>
 	    <dd>{{ .Description }}</dd>
