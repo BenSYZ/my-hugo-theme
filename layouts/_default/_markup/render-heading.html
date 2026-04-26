@@ -1,0 +1,7 @@
+<!-- layouts/_markup/render-heading.html -->
+<!-- add title anchor -->
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+  {{ .Text | safeHTML }}
+  <a class="anchor" href="#{{ .Anchor | safeURL }}" aria-hidden="true">#</a>
+</h{{ .Level }}>
+

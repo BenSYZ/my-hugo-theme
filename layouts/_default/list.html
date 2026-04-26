@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {{partial "head.html" . }}
+    {{ partial "head.html" . }}
   </head>
-<body>
-  <div class="container">
-    <div class="header"> {{ partial "header.html" . }} </div>
-    <div class="middle">
-      <div id="content">
-	<dl>
-	{{ range $.Data.Pages.ByLastmod.Reverse }}
-	  <dt><a href={{ .Permalink }}>{{ .Title }}</a></dt>
-	    <dd>[{{ .Page.Lastmod.Format "Mon, 2006-01-02" }}]</dd>
-	    <dd>{{ .Description }}</dd>
-	{{ end }}
-	</dl>
-	</div>
-      <div id="Rsidebar"> {{partial "sidebar.html" .}} </div>
+  <body>
+    <div class="container">
+      <div class="header"> {{ partial "header.html" . }} </div>
+      <div class="middle">
+        {{ if .Params.autoindex }}
+        <div id="TitleWithToc"> </div>
+        <div id="content">
+          <dl>
+            {{ if .Params.ByPublishDate }}
+              {{ range $.Data.Pages.ByPublishDate }}
+              <dt>{{ .Page.PublishDate.Format "2006-01-02" }} <a href={{ .Permalink }}>{{ .Title }}</a></dt>
+              <dd>{{ .Description }}</dd>
+              {{ end }}
+            {{ else }}
+              {{ range $.Data.Pages.ByPublishDate.Reverse }}
+              <dt>{{ .Page.PublishDate.Format "2006-01-02" }} <a href={{ .Permalink }}>{{ .Title }}</a></dt>
+              <dd>{{ .Description }}</dd>
+              {{ end }}
+            {{ end }}
+          </dl>
+        </div>
+        <div id="Rsidebar"> {{partial "sidebar.html" .}} </div>
+        {{ else }}
+        <!-- left -->
+        <div id="TitleWithToc">
+          <div id="TitleOfToc">{{ .Title }}</div>
+          {{ .TableOfContents }}
+        </div>
+        <!-- middle -->
+        <div id="content"> {{ .Content }} </div>
+        <!-- right -->
+        <div id="Rsidebar"> {{partial "sidebar.html" .}} </div>
+        {{ end }}
+      </div>
+      <div class="footer">
+        {{ partial "taxonomies.html" . }}
+        {{ partial "footer.html" . }}
+      </div>
     </div>
-    <div class="footer">
-      {{ partial "taxonomies.html" . }}
-      {{ partial "footer.html" . }}
-    </div>
-  </div>
-
-</body>
+  </body>
 </html>

@@ -1,0 +1,10 @@
+<!-- left -->
+<div id="TitleWithToc">
+  <div id="TitleOfToc">{{ .Title }}</div>
+  {{ .TableOfContents }}
+</div>
+<!-- middle -->
+<div id="content"> {{ .Content }} </div>
+<!-- right -->
+<div id="Rsidebar"> {{partial "sidebar.html" .}} </div>
+
