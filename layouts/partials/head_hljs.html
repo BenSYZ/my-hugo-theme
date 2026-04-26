@@ -19,14 +19,14 @@
 </script>
 
 <link rel="stylesheet"
-      href="/css/hljs/snazzy.css">
+      href="{{ "css/hljs/snazzy.css" | relURL }}">
 <link rel="stylesheet"
-      href="/css/hljs/line-numbers.min.css">
+      href="{{ "css/hljs/line-numbers.min.css" | relURL }}">
 
 <!--<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>-->
-<script src="/js/hljs/highlight.min.js"></script>
+<script src="{{ "js/hljs/highlight.min.js" | relURL }}"></script>
 <!--<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>-->
-<script src="/js/hljs/highlightjs-line-numbers.min.js"></script>
+<script src="{{ "js/hljs/highlightjs-line-numbers.min.js" | relURL }}"></script>
 
 <script>hljs.highlightAll();</script>
 <script>hljs.initLineNumbersOnLoad();</script>
