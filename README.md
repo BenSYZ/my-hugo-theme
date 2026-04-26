@@ -11,23 +11,22 @@ hugo new theme my-hugo-theme
 
 * index.md: leaf
 * _index.md: branch
-    * autoindex
-        * true: fixed format
-        * false: use contents in _index.md
-    * islist
-        * true: disable toc, disable head anchor/index
+    * article
+        * true: use contents in _index.md
+        * false: fixed format
+    * article_list
+        * true:
+            + set article to be true
+            + disable toc, disable head anchor/index
 
-三个需求：
-1. leaf page
-2. branch page with autoindex
-3. branch page but is article
+四个需求：
 
-| content type | page type | content        | params    | template file         | example                                |
-|--------------|-----------|----------------|-----------|-----------------------|----------------------------------------|
-| list         | branch    | directory list | autoindex | /_default/list.html   | contents/blogs/_index.md               |
-| article      | leaf      | markdown       |           | /_default/single.html | contents/blogs/blah.md                 |
-| article      | branch    | markdown       |           | /_default/list.html   | contents/blogs/blah/{_index.md,sub.md} |
-| list         | branch    | markdown       | islist    | /_default/list.html   | contents/_index.md                     |
+| content type | page type | content        | params       | template file         | example                                |
+|--------------|-----------|----------------|--------------|-----------------------|----------------------------------------|
+| list         | branch    | directory list |              | /_default/list.html   | contents/blogs/_index.md               |
+| article      | leaf      | markdown       |              | /_default/single.html | contents/blogs/blah.md                 |
+| article      | branch    | markdown       | article      | /_default/list.html   | contents/blogs/blah/{_index.md,sub.md} |
+| article_list | branch    | markdown       | article_list | /_default/list.html   | contents/_index.md                     |
 
 ## parameters:
 ```toml
@@ -40,11 +39,11 @@ hugo new theme my-hugo-theme
 ```
 
 ## markdown params
-### self write list
+### article list
 ```md
 ---
 title: Ben's Blog
-islist: true
+article_list: true
 ---
 
 ## [Blogs](blogs)
@@ -54,12 +53,6 @@ islist: true
 ```
 
 ### article list
-```
----
-title: "Blogs"
-autoindex: true
----
-```
 
 
 ## Resource files
