@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="{{ "css/head_index.css" | relURL }}">
 {{ end }}
 
-
+{{- $noop := .Content -}} {{/* 强制触发 Markdown 解析 */}}
 {{ if .Page.Store.Get "hasMermaid" }}
   <script src="{{ "js/mermaid.min.js" | relURL }}"></script>
   <script>
