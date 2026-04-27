@@ -15,6 +15,9 @@
         <!-- {{ .Params.article_list }}, {{ .Params.article }}, {{ $article }} -->
 
         {{ $pages := $.Data.Pages.ByPublishDate.Reverse }}
+        {{ if eq $.Title "Tags" }}
+          {{ $pages = $.Data.Pages.ByTitle }}
+        {{ end }}
         {{ if .Params.ByPublishDate }}
           {{ $pages = $.Data.Pages.ByPublishDate }}
         {{ end }}
@@ -28,6 +31,9 @@
               {{ $sub_article_prefix := "" }}
               {{ with .Page.PublishDate }}
                 {{ $sub_article_prefix = .Format "2006-01-02" }}
+              {{ end }}
+              {{ if eq $.Title "Tags" }}
+                {{ $sub_article_prefix = "" }}
               {{ end }}
               {{ $sub_article_prefix }} <a href={{ .Permalink }}>{{ .Title }}</a>
             </dt>
